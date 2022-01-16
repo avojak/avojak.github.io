@@ -1,0 +1,69 @@
+---
+layout: default
+title: Projects
+redirect_from:
+  - /projects/archive/
+  - /projects/archive
+  - /projects/archive/1/
+  - /projects/archive/1
+---
+
+{% unless paginator.previous_page %}
+  {% comment %}
+    Newest posts in a unique, Medium-like layout on the first page
+  {% endcomment %}
+  <header class="center">
+    <h1>Projects</h1>
+    <h2>A selection of my favorite side-projects that I've worked on over the years</h2>
+  </header>
+  
+  <section class="latest">
+    {% assign post=paginator.posts.first %}
+    {% include featured.html post=post %}
+
+    {% assign post=paginator.posts[1] %}
+    {% include featured.html post=post %}
+
+    {% assign post=paginator.posts[2] %}
+    {% include featured.html post=post %}
+
+    {% assign post=paginator.posts[3] %}
+    {% include featured.html post=post %}
+  </section>
+{% endunless %}
+
+<section class="more">
+{% if paginator.previous_page %}
+  <h2>Archive Page {{ paginator.page }}</h2>
+  {% for post in paginator.posts %}
+    {% unless post.hidden %}
+      {% include featured.html post=post %}
+    {% endunless %}
+  {% endfor %}
+{% else %}
+  <h2>More Projects</h2>
+  {% for post in paginator.posts offset: 4 %}
+    {% unless post.hidden %}
+      {% include featured.html post=post %}
+    {% endunless %}
+  {% endfor %}
+{% endif %}
+</section>
+
+<nav class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">Newer</a>
+  {% endif %}
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Older</a>
+  {% endif %}
+</nav>
+
+<div>
+  <hr />
+  <article>
+    <h2>Looking for More?</h2>
+    <p>This is only a selection of some of my favorite side projects. My complete open-source work can be found on my <a href="https://github.com/avojak" target="_blank">GitHub profile</a>. Go check it out!
+  </article>
+</div>

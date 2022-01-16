@@ -1,0 +1,26 @@
+{% assign post = include.post %}
+
+<a class="featured{% if post.image %} with-image{% endif %}{% if include.size %} {{ include.size }}{% endif %}" href="{{ post.url | prepend: site.baseurl }}">
+  {% if post.image %}
+    <div class="featured-image" alt="Featured image" style="background-image: url({{ post.image }});"></div>
+  {% endif %}
+
+  <header>
+    <h2>{% include title.html title=post.title %}</h2>
+    {% if post.description %}
+      <h3>
+        {% include title.html title=post.description %}
+        {% if include.post.redirect_to %} →{% endif %}
+      </h3>
+    {% endif %}
+    
+    {% assign sortedTags = post.tags %}
+    {% for tag in sortedTags %}
+      {% if tag != "evergreen" %}
+        <span class="tag" href="{{site.baseurl}}/tags/#{{ tag | replace: ' ', '-' }}">{{ tag }}</span>
+      {% endif %}
+    {% endfor %}    
+  </header>
+
+</a>
+

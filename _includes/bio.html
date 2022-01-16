@@ -1,0 +1,31 @@
+
+{% assign author=site.authors[include.author]  %}
+
+<header>
+  <div class="bio">
+    <img class="avatar" style="float: none; margin-left: auto; margin-right: auto; margin-top: 50px;"
+      srcset="https://www.gravatar.com/avatar/{{ site.gravatar }}?s=300&d=blank 2x"
+      src="https://www.gravatar.com/avatar/{{ site.gravatar }}?s=150&d=blank"
+      alt="avojak Avatar"
+    />
+    <div class="author center">
+      <h1 class="name">{{ author.name }}</h1>
+      <h2 class="description">{{ author.description }} | {{ author.location }}</h2>
+    </div>
+  </div>
+</header>
+
+<section>
+  <p>
+    Andrew Vojak is a Sr. Software Engineer at United Launch Alliance (ULA). He has been working professionally since graduating in 2014
+    with a B.S. in Computer Science from the University of Illinois at Urbana-Champaign. Andrew began his career at Cerner Corporation
+    developing software to integrate physiological waveform data into electronic health records. In 2017, Andrew began working at 
+    Raytheon Technologies where he worked on several programs, including GPS OCX. In December of 2021, he completed his Master of 
+    Computer Science degree from the University of Illinois at Urbana-Champaign. Andrew is also involved in the open source community,
+    and is an elementary OS community developer. His other hobbies and interests include hiking, woodworking, maintaining a homelab,
+    Star Wars, LEGO, and a good cup of coffee!
+  </p>
+  <ul style="list-style-type: none;">
+    <li><a rel="nofollow noopener noreferrer" target="_blank" href="{{ site.baseurl }}/about/resume/" class="read-more"><i class="far fa-fw fa-file-alt"></i> See résumé</a></li>
+  </ul>
+</section>

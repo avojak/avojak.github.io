@@ -1,0 +1,39 @@
+title: "avojak"
+description: "@avojak | Andrew Vojak"
+permalink: /projects/:title/ # Include YYYY/MM/DD to preserve links from the old platform which used this URL format 
+theme-color: "#242424" #"#64baff"
+gravatar: 4dfa9066e794647fdedf323ecab85333 # Gravatar md5 hash
+github: avojak
+twitter: avojak
+stackoverflow: 3300205/avojak
+linkedin: andrewvojak
+email: andrew.vojak@gmail.com
+
+authors:
+  avojak:
+    name: "Andrew Vojak"
+    description: "Software Engineer"
+    employer: United Launch Alliance (ULA)
+    location: Denver, CO
+    gravatar: 4dfa9066e794647fdedf323ecab85333 # Gravatar md5 hash
+  anonymous:
+    name: "Unknown Author"
+
+plugins:
+  - jekyll-paginate
+  - jekyll-redirect-from
+  - jekyll-sitemap
+
+paginate: 7
+paginate_path: "/projects/archive/:num/"
+
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+future: false # Allows us to stage posts
+exclude: [README.md, Gemfile, Gemfile.lock, vendor]
+include: ['_pages']

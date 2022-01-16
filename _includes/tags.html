@@ -1,0 +1,9 @@
+<aside class="tags">
+  {% assign sortedTags = page.tags | sort %}
+  {% for tag in sortedTags %}
+    {% if tag != "evergreen" %}
+      <a class="tag" href="{{site.baseurl}}/tags/#{{ tag | replace: ' ', '-' }}">{{ tag }}</a>
+    {% endif %}
+  {% endfor %}
+</aside>
+

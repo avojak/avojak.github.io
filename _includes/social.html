@@ -1,0 +1,51 @@
+<div class="social">
+
+  <div class="share">
+    <h3>Share</h3>
+    {% assign share-url = page.url | prepend: site.baseurl | prepend: site.url %}
+
+    <a
+      href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ share-url }}&via={{ site.twitter }}&original_referer={{ share-url }}"
+      rel="noreferrer nofollow noopener"
+      target="_blank"
+      title="Twitter"
+    >
+      <img src="{{ '/images/twitter.svg' | prepend: site.baseurl }}" alt="Twitter" />
+    </a>
+
+    <a
+      href="https://www.facebook.com/sharer/sharer.php?u={{ share-url }}"
+      rel="noreferrer nofollow noopener"
+      target="_blank"
+      title="Facebook"
+    >
+      <img src="{{ '/images/facebook.svg' | prepend: site.baseurl }}" alt="Facebook" />
+    </a>
+
+    <a
+      href="{{ page.url | prepend: site.baseurl | prepend: site.url }}"
+      title="Permalink"
+      onclick="return share()"
+    >
+      <img src="{{ '/images/edit-copy-32.svg' | prepend: site.baseurl }}" alt="Permalink" />
+    </a>
+  </div>
+</div>
+
+<script>
+function share() {
+  if (navigator.share) {
+    navigator.share({
+      title: "{{ page.title }}",
+      text: "{{ page.description }}",
+      url: "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
+    })
+    .catch((error) => console.log("Error sharing", error));
+
+    return false;
+  } else {
+    console.log("Sharing not supported; falling back to link");
+    return true;
+  }
+}
+</script>
