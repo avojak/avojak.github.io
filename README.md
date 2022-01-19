@@ -1,22 +1,6 @@
-# blog
+# avojak.com
 
-A static, privacy-respecting blog. In ways inspired by both Medium and the popular Medium-look-alike [mediumish-theme-jekyll](https://github.com/wowthemesnet/mediumish-theme-jekyll).
-
-## Goals
-
-Remember, we moved away from other platforms for very specific reasons.
-
-1. **Completely frictionless** for readers.
-2. **As few external resources as possible**—it slows things down and introduces potential privacy issues.
-3. **Little-to-no JavaScript**—it’s a blog, not a web app. Currently, we only use progressively-enhancing JS for improving the image zoom experience.
-
-## Modern Niceties
-
-Just because it's static and privacy-respecting doesn't mean it's not modern and featureful.
-
-1. **RSS feed support** for all the cross-posting you could desire.
-2. **Completely responsive** design from the start.
-3. **Dark style** support for everything from day zero.
+Forked and modified from [elementary/blog-template](https://github.com/elementary/blog-template).
 
 ## Editing workflow
 
@@ -53,17 +37,6 @@ This is a bit verbose, but ensures:
 Optimize images with the lowest JPG percent that looks good (i.e. manually in GIMP), and use something like [Image Optimizer](https://appcenter.elementary.io/com.github.gijsgoudzwaard.image-optimizer) for PNGs.
 
 Also consider JPGs instead of PNGs when the majority of the image is photographic or a gradient (i.e. not solid colors), as that will compress way better than a PNG.
-
-## Repos
-
-The blog is actually split into two repos:
-
-1. [@elementary/blog-template](https://github.com/elementary/blog-template), and
-2. [@elementary/blog](https://github.com/elementary/blog) (private)
-
-The template is the source for the design and layout. The private repo holds a copy of the template plus the actual posts themselves, and is set up with GitHub Pages. Layout and design work should always be done against the template repo.
-
-The reason for this separation is to be able to stage future/private blog posts while still letting people benefit from the template work. Ideally we'd have another solution that let us keep the contents of the blog itself public as well, without exposing future posts—or adding significantly to the complexity of maintaining the blog.
 
 ## Building & Running Locally
 
