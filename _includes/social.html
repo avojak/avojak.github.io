@@ -2,7 +2,7 @@
 
   <div class="share">
     <h3>Share</h3>
-    {% assign share-url = page.url | prepend: site.url %}
+    {% assign share-url = page.url | prepend: site.baseurl | prepend: site.url %}
 
     <a
       href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ share-url }}&via={{ site.twitter }}&original_referer={{ share-url }}"
