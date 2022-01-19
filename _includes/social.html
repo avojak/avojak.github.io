@@ -2,7 +2,7 @@
 
   <div class="share">
     <h3>Share</h3>
-    {% assign share-url = page.url | prepend: site.baseurl | prepend: site.url %}
+    {% assign share-url = page.url | prepend: site.url %}
 
     <a
       href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ share-url }}&via={{ site.twitter }}&original_referer={{ share-url }}"
@@ -23,7 +23,7 @@
     </a>
 
     <a
-      href="{{ page.url | prepend: site.baseurl | prepend: site.url }}"
+      href="{{ share-url }}"
       title="Permalink"
       onclick="return share()"
     >
@@ -38,7 +38,7 @@ function share() {
     navigator.share({
       title: "{{ page.title }}",
       text: "{{ page.description }}",
-      url: "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
+      url: "{{ share-url }}",
     })
     .catch((error) => console.log("Error sharing", error));
 
