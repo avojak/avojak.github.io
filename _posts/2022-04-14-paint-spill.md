@@ -10,7 +10,12 @@ tags:
   - evergreen
 ---
 
-[![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.avojak.paint-spill)
+<table align="center">
+  <tr>
+    <td><a href="https://appcenter.elementary.io/com.github.avojak.paint-spill"><img src="https://appcenter.elementary.io/badge.svg" alt="Get it on AppCenter" /></a></td>
+    <td><a href='https://flathub.org/apps/details/com.github.avojak.paint-spill'><img width='155' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a></td>
+  </tr>
+</table>
 
 ## The color-filling puzzle game
 
