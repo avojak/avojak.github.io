@@ -3,6 +3,13 @@ body > header {
   color: var(--fg-color);
   fill: var(--fg-color);
 
+  nav:last-of-type {
+    border-bottom: 1px solid var(--silver-300); //var(--secondary-bg-color);
+    @media (prefers-color-scheme: dark) {
+      border-bottom: 1px solid var(--silver-900);
+    }
+  }
+
   nav {
     display: flex;
     font-size: 0;
@@ -11,7 +18,7 @@ body > header {
     padding: 0 1rem;
     padding-bottom: 1px;
 
-    background-color: var(--bg-color);
+    background-color: var(--secondary-bg-color);
     color: var(--fg-color);
     fill: var(--fg-color);
     border-bottom: 1px solid var(--secondary-bg-color);
