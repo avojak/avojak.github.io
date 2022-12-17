@@ -1,52 +1,65 @@
-{% assign profile = include.account | prepend: "https://github.com/" %}
-{% assign permalink = include.id | prepend: "/status/" | prepend: profile %}
+{% assign fullname = include.repository | prepend: "/" | prepend: include.user %}
+{% assign permalink = fullname | prepend: "https://github.com/" %}
 
 <div class="github-card">
   <header>
-    <a class="account" href="{{ profile }}">
-      {% assign prefix = include.avatar | slice: 0, 4 %}
-      {% if prefix == "http" %}
-        {% assign avatar = include.avatar %}
-      {% else %}
-        {% assign avatar = include.avatar | prepend: site.baseurl %}
-      {% endif %}
-      <img class="avatar" src="{{ avatar }}" />
-      <strong>{{ include.name }}</strong>
-      <p>@{{ include.account }}</p>
+    <a class="account" href="{{ permalink }}">
+      <img class="avatar" src="https://github.com/{{ include.user }}.png" />
+      <p>{{ include.user }}/<b>{{ include.repository }}</b></p>
     </a>
     <a href="{{ permalink }}">
       <img class="logo" src="{{ site.baseurl }}/images/github.svg" />
     </a>
   </header>
 
-  <p>{{ include.contents }}</p>
-
   {% if include.image %}
-    <a href="{{ permalink }}">
-      {% assign prefix = include.image | slice: 0, 4 %}
-      {% if prefix == "http" %}
-        {% assign image = include.image %}
-      {% else %}
-        {% assign image = include.image | prepend: site.baseurl %}
-      {% endif %}
-      <img src="{{ image }}" />
-    </a>
-  {% elsif include.video %}
-    {% assign prefix = include.video | slice: 0, 4 %}
-    {% if prefix == "http" %}
-      {% assign video = include.video %}
-    {% else %}
-      {% assign video = include.video | prepend: site.baseurl %}
-    {% endif %}
-    <video width="600" controls loop>
-      <source src="{{ video }}" type="video/mp4">
-    </video>
+  <a href="{{ permalink }}"><img id="{{ fullname }}-image" src="{{ include.image }}"/></a>
   {% endif %}
 
+  <p id="{{ fullname }}-description"></p>
+
+  <footer>
+    <span id="{{ fullname }}-issues" style="white-space:nowrap;">{% include svg/circle-dot-regular.svg %}</span>
+    <span id="{{ fullname }}-stargazers" style="white-space:nowrap;">{% include svg/star-regular.svg %}</span>
+    <span id="{{ fullname }}-forks" style="white-space:nowrap;">{% include svg/code-fork-solid.svg %}</span>
+  </footer>
   <footer>
     <a href="{{ permalink }}">
-      <span>View on Twitter →</span>
-      <time datetime="{{ include.timestamp | date:"%Y-%m-%d" }}">{{ include.timestamp | date: "%b %e, %Y" }}</time>
+      <span>View on GitHub →</span>
     </a>
   </footer>
+
+  <script defer>
+    // Data for testing without actually hitting the GitHub API
+    // out = {"stargazers_count":123456, "forks_count":123, "open_issues_count":60, "description":"Super cool project with absolutely zero bugs"};
+    // document.getElementById("{{ fullname }}-stargazers").innerHTML += numeral(out['stargazers_count']).format('0.[0]a') + " Stars";
+    // document.getElementById("{{ fullname }}-issues").innerHTML += numeral(out['open_issues_count']).format('0.[0]a') + " Issues";
+    // document.getElementById("{{ fullname }}-description").innerHTML = out['description'];
+    // document.getElementById("{{ fullname }}-forks").innerHTML += numeral(out['forks_count']).format('0.[0]a') + " Forks";
+
+    fetch('https://api.github.com/repos/{{ fullname }}')
+      .then(res => {
+        if (!res.ok) {
+          throw new Error("Bad network response");
+        }
+        return res.json();
+      })
+      .then((out) => {
+        var stargazers = out['stargazers_count']
+        var issues = out['open_issues_count']
+        var forks = out['forks_count']
+        
+        // Populate the elements with the data from the response
+        document.getElementById("{{ fullname }}-stargazers").innerHTML += numeral(stargazers).format('0.[0]a') + " Star" + (stargazers != 1 ? "s" : "");
+        document.getElementById("{{ fullname }}-issues").innerHTML += numeral(issues).format('0.[0]a') + " Issue" + (issues != 1 ? "s" : "");
+        document.getElementById("{{ fullname }}-forks").innerHTML += numeral(forks).format('0.[0]a') + " Fork" + (forks != 1 ? "s" : "");
+        document.getElementById("{{ fullname }}-description").innerHTML = out['description'];
+    }).catch((err) => {
+      console.error(err);
+      // Clear out the fields in case of error rather than showing 0 values
+      document.getElementById("{{ fullname }}-stargazers").innerHTML = "";
+      document.getElementById("{{ fullname }}-issues").innerHTML = "";
+      document.getElementById("{{ fullname }}-forks").innerHTML = "";
+    });
+  </script>
 </div>

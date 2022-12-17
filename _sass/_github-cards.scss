@@ -52,14 +52,14 @@
 
       p,
       strong {
-        font-size: 0.8em;
+        font-size: 1.25em;
         grid-column-start: 2;
-        line-height: 1.25;
+        line-height: 2;
         margin: 0;
       }
 
       p {
-        opacity: 0.75;
+        // opacity: 0.75;
       }
     }
 
@@ -75,10 +75,31 @@
     line-height: 1;
     margin-top: 1.5em;
 
-    a {
+    display: flex;
+    justify-content: left;
+    opacity: 0.6;
+
+    // div {
+    //   display: flex;
+    //   justify-content: left;
+    //   opacity: 0.6;
+    // }
+
+    // a {
+    //   display: flex;
+    //   justify-content: space-between;
+    //   opacity: 0.6;
+    // }
+
+    span {
       display: flex;
-      justify-content: space-between;
-      opacity: 0.6;
+      align-items: center;
+      margin-right: 24px;
+    }
+
+    svg {
+      width: 1em;
+      margin-right: 6px;
     }
   }
 
