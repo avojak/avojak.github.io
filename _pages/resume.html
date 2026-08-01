@@ -7,7 +7,7 @@ permalink: "/about/resume/"
   <section class="row resume-row" id="resume-summary">
     <h2>Summary</h2>
     <p>
-      Software engineer with 12 years of experience developing and supporting enterprise applications and deployments both on-prem and in the cloud.
+      Software engineer and technical lead with 12+ years of experience designing internal developer platforms, DevSecOps tooling, and cloud infrastructure. Experienced leading cross-functional initiatives across security, cloud, and software engineering organizations to improve developer productivity while adhering to compliance frameworks. Expertise in AWS, Terraform, containers, CI/CD architecture, and Infrastructure as Code.
     </p>
   </section>
 </section>
@@ -32,43 +32,54 @@ permalink: "/about/resume/"
     <section class="employment-entry">
       <h3><b>Senior Software Engineer II &mdash; United Launch Alliance (ULA); Centennial, Colorado</b> (2022 - Present)</h3>
       <p>
-        Technical lead of the CI/CD Pipelines team. Providing technical direction and architecture for a team of six developers supporting
-        the entire software development organization. Collaborating with IT Security, Cloud Platform and user teams to deliver efficient
-        solutions for software build and deployment, as well as secure development environments.
+        Technical lead for a six-engineer Platform Engineering team responsible for CI/CD pipelines, infrastructure, and
+        internal developer platforms supporting more than 300 software engineers. Partner with IT Security, Cloud
+        Platform, and development organizations to deliver secure, scalable developer tooling, cloud development
+        environments, and software delivery platforms in AWS.
       </p>
       <ul>
-        <li>Deployed and implemented Coder cloud development environments for the software organization in AWS compliant to the NIST 800-171 standard</li>
-        <li>Leader of a Container Utilization Community of Practice to champion the adoption of container technologies, and develop standards,
-        guidelines, and guardrails</li>
-        <li>Wrote and deployed IaC/CaC-backed, highly-available deployment of GitLab with automated zero-downtime upgrades</li>
-        <li>Established best practices for building and deploying DevSecOps platform applications into our AWS cloud environment</li>
-        <li>Maintained catalog of re-usable CI/CD pipeline components</li>
-        <li>Architected a platform to ingest and analyze FOSS products before making them available to developers</li>
+        <li>Led the design and deployment of AWS-hosted cloud development environments, replacing traditional
+        workstation-based development while maintaining NIST 800-171 compliance requirements</li>
+        <li>Architected and implemented a highly-available GitLab platform in AWS using Infrastructure as Code,
+        enabling automated zero-downtime upgrades and replacing legacy on-premises Bamboo and Bitbucket
+        infrastructure</li>
+        <li>Deployed production Kubernetes clusters using Amazon EKS to host internal developer platform services
+        and pipelines</li>
+        <li>Founded and led a company-wide Container Community of Practice, responsible for defining container
+        standards, guidelines, guardrails, and adoption guidance across engineering teams</li>
+        <li>Established best practices for building and deploying DevSecOps platform applications into our AWS
+        environment with a security-first mindset</li>
+        <li>Designed and maintained reusable GitLab CI pipeline components adopted by over a hundred software
+        pipelines, improving consistency, maintainability and onboarding of new projects</li>
+        <li>Architected an internal software supply chain platform to automate open source package ingestion,
+        vulnerability analysis, and approval workflows before distribution to engineering teams</li>
       </ul>
     </section>
     <section class="employment-entry">
       <h3><b>Senior Software Engineer &mdash; United Launch Alliance (ULA); Centennial, Colorado</b> (April 2021 - 2022)</h3>
       <p>
-        Member of the DevSecOps team, engaging directly with development teams to simplify their build and deployment process using a
-        Pipeline as Code approach, and empower them to make changes. Actively championing the use of Docker and container technologies
-        to provide a clean, reproducible build environment.
+        Platform engineer within the DevSecOps team, partnering directly with software development teams to modernize
+        build and release processes through Pipeline as Code, and containerized development workflows. Contributed to
+        the organizations migration of software delivery platforms from on-premises infrastructure to AWS. Championed
+        the use of Docker and container technologies to provide a clean, reproducible build environment.
       </p>
       <ul>
-        <li>Established best practices for library and package management across the software organization</li>
-        <li>Standardized implementation of static code analysis with SonarQube</li>
-        <li>Mentored junior team members</li>
+        <li>Established organization-wide standards for software package and dependency management to improve consistency, governance and supply chain security</li>
+        <li>Standardized adoption of SonarQube for static code analysis, integrating automated code quality gates into CI/CD pipelines</li>
+        <li>Mentored engineers in CI/CD architecture, DevSecOps practices</li>
       </ul>
     </section>
     <section class="employment-entry">
       <h3><b>Senior Software Engineer &mdash; Raytheon Technologies; Aurora, Colorado</b> (February 2020 - April 2021)</h3>
       <p>
-        Continuation of prior CI/CD pipeline work and baseline management automation. Administered Artifactory and the Atlassian tool suite.
-        Assisted software development teams in the adoption of DevOps practices and ensuring faster, and higher quality customer deliveries.
-        As a support team, we found ourselves in a unique position to anticipate needs across the rest of the program, then research and develop
-        solutions before the need was fully realized.
+        Continuation of prior CI/CD pipeline work and baseline management automation. Administered Artifactory and the
+        Atlassian tool suite. Assisted software development teams in the adoption of DevOps practices and ensuring
+        faster, and higher quality customer deliveries. As a support team, we found ourselves in a unique position to
+        anticipate needs across the rest of the program, then research and develop solutions before the need was fully
+        realized.
       </p>
       <ul>
-        <li>Automated installation and configuration of factory tools using Ansible</li>
+        <li>Automated installation and configuration of factory tools using Ansible, reducing manual installation effort and improving deployment consistency</li>
         <li>Designed and developed an application to ingest file transfers between air-gapped development environments</li>
       </ul>
     </section>
@@ -98,7 +109,7 @@ permalink: "/about/resume/"
       </p>
       <ul>
         <li>Improved workflow performance by 80% by reducing service calls and parallelizing bottlenecks</li>
-        <li>Reduced maximum CPU usage by 20% through profiling and optimizing CPU-intensive code</li>
+        <li>Reduced peak CPU usage by 20% through profiling and optimizing CPU-intensive code</li>
         <li>Facilitated debugging and testing by independently creating plugins and tools for the team to isolate components and service calls outside the context of our own application</li>
         <li>Identified numerous security vulnerabilities for other teams in applications across the organization during semiannual “Can You Break It?” events</li>
       </ul>
@@ -134,26 +145,38 @@ permalink: "/about/resume/"
 
 <section class="container">
   <section class="row resume-row" id="resume-technical-skills">
-    <h2>Technical Skills</h2>
+    <h2>Core Technologies</h2>
+    <section class="skill-category">
+      <h3>Platform &amp; Cloud</h3>
+      <ul>
+        <li>AWS (EKS, ECS, EC2, IAM, S3, RDS, EFS, Route53, KMS, Secrets Manager, Lambda)</li>
+        <li>Docker</li>
+        <li>Kubernetes</li>
+      </ul>
+    </section>
+    <section class="skill-category">
+      <h3>IaC/Cac &amp; DevSecOps</h3>
+      <ul>
+        <li>Terraform, Ansible, Packer</li>
+        <li>GitLab, SonarQube, JFrog Platform (Artifactory, Xray)</li>
+      </ul>
+    </section>
     <section class="skill-category">
       <h3>Languages</h3>
       <ul>
-        <li>Experience in Java, Python, Vala, SQL, PostgreSQL, Bash, HTML &amp; CSS</li>
-        <li>Some experience with JavaScript, C/C++</li>
+        <li>Java, Python, Vala, Bash, SQL, PostgreSQL, HTML, CSS</li>
       </ul>
     </section>
+  </section>
+</section>
+
+<section class="container">
+  <section class="row resume-row" id="resume-technical-skills">
+    <h2>Certifications</h2>
     <section class="skill-category">
-      <h3>APIs, Technologies &amp; Tools</h3>
+      <!-- <h3>Certifications</h3> -->
       <ul>
-        <li>AWS, Ansible, Terraform, Packer, Docker</li>
-        <li>Spring/Spring Boot, SWT, GTK, JUnit, Mockito, RPM Packaging</li>
-        <li>Artifactory, GitLab, Coder, Atlassian tool suite</li>
-      </ul>
-    </section>
-    <section class="skill-category">
-      <h3>Certifications</h3>
-      <ul>
-        <li>Security+ (Active)</li>
+        <li>Security+ (Verification ID: 0H45K54PBG11QCKV)</li>
         <li>AWS Certified Developer - Associate (Expired Feb. 2021)</li>
         <li>AWS Certified Solutions Architect - Associate (Expired Aug. 2021)</li>
       </ul>
